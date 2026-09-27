@@ -75,11 +75,33 @@ body * {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  animation: slideBack 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-  left: initial;
-  right: 0;
+  animation: slideIn 0.4s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slideBack {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
 
 #switch span {
@@ -110,4 +132,49 @@ ul a {
   border-radius: 8px;
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
-  text-decoration:
+  text-decoration: none;
+  font-weight: 500;
+  background: var(--surface-color);
+  transition: background 0.2s;
+}
+
+ul a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 40px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s, border-radius 0.2s;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  border-radius: 50%;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
