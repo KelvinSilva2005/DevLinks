@@ -52,3 +52,10 @@ ul {
 li {
   border: 1px solid red; /* temporário, só pra visualizar a caixa */
 }
+
+ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+}
