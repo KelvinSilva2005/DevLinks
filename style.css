@@ -4,21 +4,23 @@
   box-sizing: border-box;
 }
 
-body {
-  /*
-  background-image: url(./assets/bg-mobile.jpg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover;
-  */
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+}
 
-  /*background: color image repeat position/size */
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+}
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
 }
 
 body * {
   font-family: "Inter", sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 
 #container {
